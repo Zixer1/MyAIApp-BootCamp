@@ -1,7 +1,7 @@
 import chromadb
 import chromadb.utils.embedding_functions as ef
 
-db = chromadb.PersistentClient(path="../chroma_db")
+db = chromadb.PersistentClient(path="chroma_db")
 memories = db.get_or_create_collection("my_facts")
 
 # <<< CHANGE THESE TO THREE FACTS ABOUT YOU >>>
