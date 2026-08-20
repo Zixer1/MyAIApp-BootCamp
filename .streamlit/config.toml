@@ -1,7 +1,3 @@
-# .streamlit/config.toml
-# Save and reload the page. No restart needed.
-# COMMIT THIS FILE or your live app keeps the default colours.
-
 [theme]
 # "light" or "dark", the starting point
 base = "dark"
@@ -22,7 +18,6 @@ headingFont = "Press Start 2P"
 
 # "none", "small", "medium", "large", "full"
 baseRadius = "full"
-
 [[theme.fontFaces]]
 family = "Press Start 2P"
 url = "https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2"
