@@ -12,14 +12,14 @@ textColor = "#EAEFF7"
 # outlines on boxes and inputs
 borderColor = "#2A3446"
 # "sans serif", "serif" or "monospace"
-font = "Press Start 2P"
+font = "Pixelify Sans"
 # a different font just for titles
-headingFont = "Press Start 2P"
+headingFont = "Pixelify Sans"
 
 # "none", "small", "medium", "large", "full"
 baseRadius = "full"
 [[theme.fontFaces]]
-family = "Press Start 2P"
-url = "https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2"
+family = "Pixelify Sans"
+url = "https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2"
 weight = 400
 style = "normal"
