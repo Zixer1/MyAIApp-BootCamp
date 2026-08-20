@@ -1,0 +1,30 @@
+# .streamlit/config.toml
+# Save and reload the page. No restart needed.
+# COMMIT THIS FILE or your live app keeps the default colours.
+
+[theme]
+# "light" or "dark", the starting point
+base = "dark"
+# your accent: buttons, sliders, links, the send arrow
+primaryColor = "#FFC93C"
+# the main page
+backgroundColor = "#10131A"
+# the sidebar and chat bubbles
+secondaryBackgroundColor = "#1B2233"
+# all your text
+textColor = "#EAEFF7"
+# outlines on boxes and inputs
+borderColor = "#2A3446"
+# "sans serif", "serif" or "monospace"
+font = "Press Start 2P"
+# a different font just for titles
+headingFont = "Press Start 2P"
+
+# "none", "small", "medium", "large", "full"
+baseRadius = "full"
+
+[[theme.fontFaces]]
+family = "Press Start 2P"
+url = "https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2"
+weight = 400
+style = "normal"
