@@ -163,7 +163,7 @@ if user_input and prompt:
     else:
         full_prompt = prompt
 
-    with st.chat_message("assistant":
+    with st.chat_message("assistant"):
         stream = client.chat.completions.create(
             model=model,
             temperature=creativity,
