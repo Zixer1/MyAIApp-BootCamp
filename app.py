@@ -50,7 +50,7 @@ def store_chat(question, answer):
 # ---------- 1. the browser tab ----------
 st.set_page_config(
     page_title="ZeusAI",
-    page_icon="⚡",            # or page_icon="logo.png"
+    page_icon="icon.png",      # the little icon in the browser tab
     layout="wide",
 )
 
@@ -65,23 +65,18 @@ st.html("""
     background-attachment: fixed;
   }
   [data-testid="stChatMessage"] {
-    background-color: transparent;
     border-radius: 18px;
     padding: 10px 16px;
   }
 </style>
 """)
 
-# ---------- 3. a logo pinned top left ----------
-st.logo("logo.png", size="large")
+# ---------- 3. a logo pinned top left, and above the sidebar ----------
+st.logo("logo_wide.png", size="large", icon_image="icon.png")
 
-# ---------- 4. a header row instead of a stacked title ----------
-crest, heading = st.columns([1, 6])
-with crest:
-    st.markdown("# ⚡")
-with heading:
-    st.title("ZeusAI")
-    st.caption("Ask me about Greek mythology, or give me a scroll to read")
+# ---------- 4. the same logo big at the top of the page ----------
+st.image("logo_wide.png", width=340)
+st.caption("Ask me about Greek mythology, or give me a scroll to read")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -124,7 +119,7 @@ SYSTEM_PROMPT = ("You are a greek god, you are all mighty and powerful. "
                  "All of the above are critical")
 
 for old in st.session_state.messages:
-    with st.chat_message(old["role"], avatar="⚡" if old["role"] == "assistant" else "🧑"):
+    with st.chat_message(old["role"], avatar="logo.png" if old["role"] == "assistant" else "🧑"):
         st.markdown(old["content"])
 
 user_input = st.chat_input("Speak, mortal..", accept_file=True, file_type=["pdf", "txt"])
@@ -140,7 +135,7 @@ if user_input and prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     client = OpenAI(
         base_url="https://api.groq.com/openai/v1",
-        api_key=os.getenv("GITHUB_TOKEN"),
+        api_key=os.getenv("GITHUB_TOKEN") or st.secrets["GITHUB_TOKEN"],
     )
 
     with st.chat_message("user", avatar="🧑"):
@@ -171,7 +166,7 @@ if user_input and prompt:
     else:
         full_prompt = prompt
 
-    with st.chat_message("assistant", avatar="⚡"):
+    with st.chat_message("assistant", avatar="logo.png"):
         stream = client.chat.completions.create(
             model=model,
             temperature=creativity,
