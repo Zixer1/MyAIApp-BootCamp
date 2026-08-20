@@ -7,8 +7,10 @@ import chromadb
 from doc_helper import read_file
 
 load_dotenv()
+import tempfile, os
 
-db = chromadb.PersistentClient(path="./chroma_db")
+DB_PATH = os.path.join(tempfile.gettempdir(), "chroma_db")
+db = chromadb.PersistentClient(path=DB_PATH)
 brain = db.get_or_create_collection("documents")
 memory = db.get_or_create_collection("chat_memory")
 
