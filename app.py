@@ -116,7 +116,7 @@ SYSTEM_PROMPT = ("You are a greek god, you are all mighty and powerful. "
                  "All of the above are critical")
 
 for old in st.session_state.messages:
-    with st.chat_message(old["role"], avatar="logo.png" if old["role"] == "assistant" else "🧑"):
+    with st.chat_message(old["role"], avatar="🧑"):
         st.markdown(old["content"])
 
 user_input = st.chat_input("Speak, mortal..", accept_file=True, file_type=["pdf", "txt"])
@@ -163,7 +163,7 @@ if user_input and prompt:
     else:
         full_prompt = prompt
 
-    with st.chat_message("assistant", avatar="logo.png"):
+    with st.chat_message("assistant":
         stream = client.chat.completions.create(
             model=model,
             temperature=creativity,
