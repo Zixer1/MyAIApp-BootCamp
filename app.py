@@ -50,7 +50,6 @@ def store_chat(question, answer):
 # ---------- 1. the browser tab ----------
 st.set_page_config(
     page_title="ZeusAI",
-    page_icon="icon.png",      # the little icon in the browser tab
     layout="wide",
 )
 
@@ -72,10 +71,8 @@ st.html("""
 """)
 
 # ---------- 3. a logo pinned top left, and above the sidebar ----------
-st.logo("logo_wide.png", size="large", icon_image="icon.png")
 
 # ---------- 4. the same logo big at the top of the page ----------
-st.image("logo_wide.png", width=340)
 st.caption("Ask me about Greek mythology, or give me a scroll to read")
 
 if "messages" not in st.session_state:
