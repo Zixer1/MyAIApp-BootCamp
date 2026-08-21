@@ -3,3 +3,4 @@ openai
 python-dotenv
 chromadb
 pypdf
+chess
